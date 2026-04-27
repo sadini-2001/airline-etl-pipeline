@@ -179,11 +179,11 @@ incremental_load_fact bronze→silver→gold  17,000      17,000        success 
 Databricks Job: `airline_incremental_pipeline`
 
 ```
-Task 1: 1_utilities        → loads shared config         (~17s)
+Task 1: 1_utilities        → loads shared config        
         ↓
-Task 2: 2_pipeline_log     → loads logging functions      (~7s)
+Task 2: 2_pipeline_log     → loads logging functions      
         ↓
-Task 3: 3_incremental_load → runs full incremental pipeline (~5m)
+Task 3: 3_incremental_load → runs full incremental pipeline 
 ```
 
 - Scheduled: daily at 2:00 AM
