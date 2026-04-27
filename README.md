@@ -191,7 +191,7 @@ Task 3: 3_incremental_load → runs full incremental pipeline
 - If Task 1 fails → Tasks 2 and 3 never run
 
 ![Job Run](screenshots/1_databricks_job_run.png)
-
+![scheduled](screenshots/5_daily_schedule_2am.png)
 ---
 
 ## 💰 Cloud Cost Optimization
