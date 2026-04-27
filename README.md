@@ -129,7 +129,7 @@ airline-etl-pipeline/
 
 ### Incremental Load (Daily)
 - New daily file drops into S3 `landing/flights/YYYY-MM-DD/`
-- Staging table isolates today's ~17K rows (not full 2.4M)
+- Staging table isolates today's rows
 - Only today's data flows through Silver and Gold
 - Delta merge (upsert) on SHA-256 surrogate key — no duplicates ever
 - Files archived to `processed/` after ingestion
@@ -137,8 +137,8 @@ airline-etl-pipeline/
 ### Data Quality (Silver Layer)
 | Issue | Fix |
 |---|---|
-| 88.7% null delay cause columns | Filled with `0.0` |
-| 99.9% null CancellationCode | Filled with `"N"` (not cancelled) |
+| Null delay cause columns | Filled with `0.0` |
+| Null CancellationCode | Filled with `"N"` (not cancelled) |
 | Impossible departure delays (< -120 mins) | Replaced with `null` |
 | Duplicate flight records | Removed via `dropDuplicates()` |
 | Raw string dates | Parsed to proper date type |
